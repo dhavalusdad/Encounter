@@ -5,6 +5,7 @@ import SelectDatePicker from '@encounter/common/components/Datepicker'; // Ensur
 export const Demographics = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   return (
+<<<<<<< HEAD
     <div className="space-y-6">
       <h1 className="text-xl font-semibold text-Primary-900">Demographics / Intake</h1>
 
@@ -81,5 +82,10 @@ export const Demographics = () => {
     </div>
   );
 };
+=======
+    <div>Demographics</div>
+  )
+}
+>>>>>>> 716e3b7ac90092412560d73bd4f7d5718265ab94
 
 export default Demographics;

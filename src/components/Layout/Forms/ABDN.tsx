@@ -14,7 +14,7 @@ export
           inputClass="!border-Gray-300 placeholder:!text-Gray-600"
           parentClassName="min-h-50px py-3 rounded-lg w-full sm:w-auto"
           errorClass=""
-          maxLength={15}
+        // maxLength={15}
         />
         <p>To complete this section, launch the ABCN application:</p>
         <Button

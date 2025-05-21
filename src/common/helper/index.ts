@@ -59,3 +59,13 @@ export const handleRedirect = () => {
 
   window.open(url, '_blank');
 };
+
+export const handleReviewRedirect = () => {
+  const url = `https://app-qa.247telehealth.com/index.php?Object=Logout&Action=TA&SecurityKey=7eWFdYp6^ezW&ShowHeader=True&ClientRefId={ClientRefId}&DateOfBirth={ddmmyyyy}&Gender={gender}&AgeTypeId={AgeTypeId}&GenderTypeId={GenderTypeId}&ProtocolType={ProtocolTypeName}`;
+  window.open(url, '_blank');
+};
+
+export const handleReviewSmsRedirect = () => {
+  const url = `https://app-qa.247telehealth.com/index.php?Object=MasterApp&Flow=2&SecurityKey=7eWFdYp6^ezW&ClientRefId={ClientRefId}&ShowHeader=True&DateOfBirth={ddmmyyyy}&Gender={gender}&AgeTypeId={AgeTypeId}&GenderTypeId={GenderTypeId}&ProtocolType={ProtocolTypeName}`;
+  window.open(url, '_blank');
+};

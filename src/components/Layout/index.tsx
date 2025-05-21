@@ -5,13 +5,14 @@ import { encounterSelector } from '@encounter/redux/ducks/encounter';
 import clsx from 'clsx';
 import { tabArray } from '@encounter/constant';
 import FormWrapper from '@encounter/components/Layout/FormWrapper';
+import RightSideBar from './RightSideBar';
 
 const Layout = () => {
   const { activeForm } = useSelector(encounterSelector);
   return (
     <div className="text-Primary-500">
       <Header />
-      <div className='flex flex-row gap-2 row'>
+      <div className="flex flex-row gap-2 row">
         <div className="flex flex-col gap-2 w-full">
           {tabArray.map((el) => {
             return (
@@ -29,7 +30,9 @@ const Layout = () => {
           })}
         </div>
         <FormWrapper />
-        <div className='w-full'>Right</div>
+        <div className="w-full">
+          <RightSideBar />
+        </div>
       </div>
     </div>
   );

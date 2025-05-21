@@ -131,6 +131,8 @@ import Copy from '../../assets/svg/copy.svg?react';
 import InviteSent from '../../assets/svg/invite-sent.svg?react';
 import Lock from '../../assets/svg/lock.svg?react';
 import Telescope from '../../assets/svg/telescope.svg?react';
+import Call from '../../assets/svg/Call.svg?react';
+import BackSpace from '../../assets/svg/BackSpace.svg?react';
 import Image from '../Image';
 import Spinner from '../Loader/Spinner';
 
@@ -266,6 +268,8 @@ export type IconNameType =
   | 'historyfileicon'
   | 'shieldHalf'
   | 'pendingQueue'
+  | 'call'
+  | 'backSpace'
   | 'ivr';
 
 type IconProps = {
@@ -566,6 +570,10 @@ export const Icon = ({
         return <PendingQueue {...iconProps} />;
       case 'ivr':
         return <Ivr {...iconProps} />;
+      case 'call':
+        return <Call {...iconProps} />;
+      case 'backSpace':
+        return <BackSpace {...iconProps} />;
       default:
         return null;
     }

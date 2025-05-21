@@ -1,12 +1,12 @@
-import { setActiveTab, updateEncounterValue, type IEncounterType } from '@encounter/redux/ducks/encounter';
+import { setActiveForm, updateEncounterFormValue, type IEncounterType } from '@encounter/redux/ducks/encounter';
 import { store } from '@encounter/redux/store';
 
 export const dispatchUpdateEncounterValue = (
-  data: IEncounterType['value']
+  data: Partial<IEncounterType['form']>
 ) => {
-  store.dispatch(updateEncounterValue(data));
+  store.dispatch(updateEncounterFormValue(data));
 };
 
-export const dispatchSetActiveTab = (activeTab: IEncounterType['activeTab']) => {
-  store.dispatch(setActiveTab(activeTab));
+export const dispatchSetActiveForm = (activeTab: IEncounterType['activeForm']) => {
+  store.dispatch(setActiveForm(activeTab));
 };

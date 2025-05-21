@@ -14,51 +14,30 @@ import ReviewSystems from './Forms/ReviewSystems';
 import NurseTriage from './Forms/NurseTriage';
 import CareAdvice from './Forms/CareAdvice';
 import Appointments from './Forms/Appointments';
+import { dispatchSetActiveForm } from '@encounter/redux/dispatch/encounter.dispatch';
 
 const FormWrapper = () => {
-  const { activeTab } = useSelector(encounterSelector);
+  const { activeForm } = useSelector(encounterSelector);
   return (
     <div className="w-full">
-      <Accordion className="relative px-22px py-26px flex flex-col gap-26px">
+      <Accordion
+        className="relative px-22px py-26px flex flex-col gap-26px"
+        defaultOpenIndex={activeForm}>
         {tabArray.map((el) => (
           <AccordionItem
-          key={el.id}
+            key={el.id}
             titleClassName={clsx(
               '',
-              activeTab === el.id ? '!text-Primary-700' : '!text-Gray-900'
+              activeForm === el.id ? '!text-Primary-700' : '!text-Gray-900'
             )}
-            // subtitleClassName={clsx(
-            //   '',
-            //   form?.id === activeDisposition?.form?.id
-            //     ? '!text-Primary-700'
-            //     : '!text-Gray-900'
-            // )}
             iconClassName={clsx(
               '',
-              activeTab === el.id
-                ? '!text-Primary-700'
-                : '!text-Gray-900'
+              activeForm === el.id ? '!text-Primary-700' : '!text-Gray-900'
             )}
             index={el.id}
             title={el?.titleName}
-            // subTitle={form?.information}
-            // onClick={(hasOpen) => {
-            //   if (hasOpen) {
-            //     if (
-            //       menuDisposition &&
-            //       activeDisposition?.question?.[0]?.disposition_form_id !==
-            //         form?.id
-            //     ) {
-            //       dispatchSetDisposition({
-            //         ...menuDisposition,
-            //         form,
-            //         question: [],
-            //         answer: []
-            //       });
-            //     }
-            //   }
-            // }}
-            >
+            hasOpen={activeForm === el.id}
+            onClick={() => dispatchSetActiveForm(el.id)}>
             {el.id === 'demographics' && <Demographics />}
             {el.id === 'abcn' && <ABDN />}
             {el.id === 'medications' && <Medications />}
@@ -70,11 +49,9 @@ const FormWrapper = () => {
             {el.id === 'nurseTriage' && <NurseTriage />}
             {el.id === 'careAdvice' && <CareAdvice />}
             {el.id === 'appointments' && <Appointments />}
-
           </AccordionItem>
         ))}
       </Accordion>
-
     </div>
   );
 };

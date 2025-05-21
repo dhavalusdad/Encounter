@@ -2,13 +2,18 @@ import type { tabArray } from '@encounter/constant';
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface IEncounterType {
-  value: { [key in (typeof tabArray)[number]['id']]: object };
-  activeTab: (typeof tabArray)[number]['id'] | null;
+  form: { [key in (typeof tabArray)[number]['id']]: (typeof tabArray)[number]['defaultValue'] };
+  activeForm: (typeof tabArray)[number]['id'] | null;
 }
 
 const initialState: IEncounterType = {
-  value: {
-    demographics: {},
+  form: {
+    demographics: {
+      patientName: '',
+      address: '',
+      phoneNumber: '',
+      dateOfBirth: ''
+    },
     abcn: {},
     medications: {},
     chronic: {},
@@ -20,24 +25,24 @@ const initialState: IEncounterType = {
     careAdvice: {},
     appointments: {}
   },
-  activeTab: null,
+  activeForm: null,
 };
 
 export const encounterSlice = createSlice({
   name: 'encounter',
   initialState,
   reducers: {
-    updateEncounterValue: (
+    updateEncounterFormValue: (
       state: IEncounterType,
-      action: PayloadAction<IEncounterType['value']>
+      action: PayloadAction<Partial<IEncounterType['form']>>
     ) => {
-      state.value = action.payload;
+      state.form = {...state.form,...action.payload};
     },
-    setActiveTab: (
+    setActiveForm: (
       state: IEncounterType,
-      action: PayloadAction<IEncounterType['activeTab']>
+      action: PayloadAction<IEncounterType['activeForm']>
     ) => {
-      state.activeTab = action.payload;
+      state.activeForm = action.payload;
     }
   }
 });
@@ -48,6 +53,6 @@ export const encounterSelector = (state: { encounter: IEncounterType }) => {
 
 const { actions, reducer } = encounterSlice;
 
-export const { updateEncounterValue, setActiveTab } = actions;
+export const { updateEncounterFormValue, setActiveForm } = actions;
 
 export default reducer;

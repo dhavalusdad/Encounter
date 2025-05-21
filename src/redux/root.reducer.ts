@@ -1,27 +1,13 @@
 import toastReducer from '@encounter/redux/ducks/toast';
 import encounterReducer from '@encounter/redux/ducks/encounter';
 import { combineReducers } from 'redux';
-import { type WebStorage, persistReducer } from 'redux-persist';
-
-const createNoopStorage: () => WebStorage = () => {
-  return {
-    getItem() {
-      return Promise.resolve(null);
-    },
-    setItem() {
-      return Promise.resolve();
-    },
-    removeItem() {
-      return Promise.resolve();
-    }
-  };
-};
-
-const storage: WebStorage = createNoopStorage();
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/es/storage';
 
 const persistConfig = {
   key: 'encounter',
-  storage: storage,
+  storage,
+  whitelist: ['encounter']
 };
 
 const rootReducer = combineReducers({

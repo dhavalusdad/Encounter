@@ -12,6 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "@tanstack/react-query": "^5.76.1",
+    "@types/react-router-dom": "^5.3.3",
     "clsx": "^2.1.1",
     "html-react-parser": "^5.2.5",
     "lodash": "^4.17.21",
@@ -24,6 +25,7 @@
     "react-mobile-picker": "^1.1.2",
     "react-phone-input-2": "^2.15.1",
     "react-redux": "^9.2.0",
+    "react-router-dom": "^7.6.0",
     "react-select": "^5.10.1",
     "react-tippy": "^1.4.0",
     "react-toastify": "^11.0.5",

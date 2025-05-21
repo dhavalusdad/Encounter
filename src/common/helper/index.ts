@@ -46,3 +46,26 @@ export const storageHelper = (type: 'local' | 'session' = 'local') => {
     }
   };
 };
+
+export const handleRedirect = () => {
+  const clientRefId = '123456'; // replace with actual dynamic value
+  const dob = '21051999'; // in ddmmyyyy format
+  const gender = 'Male'; // or 'Female'
+  const ageTypeId = '1'; // example value
+  const genderTypeId = '1'; // example value
+  const protocolTypeName = 'General'; // example value
+
+  const url = `https://app-qa.247telehealth.com/index.php?Object=Logout&Action=TA&SecurityKey=7eWFdYp6^ezW&ShowHeader=True&ClientRefId=${clientRefId}&DateOfBirth=${dob}&Gender=${gender}&AgeTypeId=${ageTypeId}&GenderTypeId=${genderTypeId}&ProtocolType=${protocolTypeName}`;
+
+  window.open(url, '_blank');
+};
+
+export const handleReviewRedirect = () => {
+  const url = `https://app-qa.247telehealth.com/index.php?Object=Logout&Action=TA&SecurityKey=7eWFdYp6^ezW&ShowHeader=True&ClientRefId={ClientRefId}&DateOfBirth={ddmmyyyy}&Gender={gender}&AgeTypeId={AgeTypeId}&GenderTypeId={GenderTypeId}&ProtocolType={ProtocolTypeName}`;
+  window.open(url, '_blank');
+};
+
+export const handleReviewSmsRedirect = () => {
+  const url = `https://app-qa.247telehealth.com/index.php?Object=MasterApp&Flow=2&SecurityKey=7eWFdYp6^ezW&ClientRefId={ClientRefId}&ShowHeader=True&DateOfBirth={ddmmyyyy}&Gender={gender}&AgeTypeId={AgeTypeId}&GenderTypeId={GenderTypeId}&ProtocolType={ProtocolTypeName}`;
+  window.open(url, '_blank');
+};

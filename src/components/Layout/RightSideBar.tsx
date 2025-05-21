@@ -3,10 +3,14 @@ import Call from '../ModalComonents/Call';
 import { useState } from 'react';
 import Chat from '../ModalComonents/Chat';
 import { ROUTES } from '@encounter/constant/routePath';
+import Order from '../ModalComonents/Order';
+import VideoCall from '../ModalComonents/VideoCall';
 
 const RightSideBar = () => {
   const [isShowCall, setIsShowCall] = useState<boolean>(false);
   const [isShowChat, setIsShowChat] = useState<boolean>(false);
+  const [isShowOrder, setIsShowOrder] = useState<boolean>(false);
+  const [isShowVideoCall, setIsShowVideoCall] = useState<boolean>(false);
   return (
     <div className="toolbox p-4 bg-white rounded-2xl shadow-md">
       <h3 className="text-lg font-semibold mb-4 text-gray-800">
@@ -33,6 +37,7 @@ const RightSideBar = () => {
           className="min-h-50px py-3 px-6 rounded-lg w-full sm:w-auto !bg-Primary-500 text-white"
           variant="filled"
           title="Patient Video Call"
+          onClick={() => setIsShowVideoCall(true)}
         />
       </div>
 
@@ -54,6 +59,7 @@ const RightSideBar = () => {
           className="min-h-50px py-3 px-6 rounded-lg w-full sm:w-auto !bg-Primary-500 text-white"
           variant="filled"
           title="Orders"
+          onClick={() => setIsShowOrder(true)}
         />
       </div>
       {isShowCall && (
@@ -63,11 +69,25 @@ const RightSideBar = () => {
           title="Call"
         />
       )}
-       {isShowChat && (
+      {isShowChat && (
         <Chat
           isShowChat={isShowChat}
           setIsShowChat={setIsShowChat}
           title="Chat"
+        />
+      )}
+      {isShowOrder && (
+        <Order
+          isShowOrder={isShowOrder}
+          setIsShowOrder={setIsShowOrder}
+          title="Order"
+        />
+      )}
+      {isShowVideoCall && (
+        <VideoCall
+          isShowVideoCall={isShowVideoCall}
+          setIsShowVideoCall={setIsShowVideoCall}
+          title="Video Call"
         />
       )}
     </div>

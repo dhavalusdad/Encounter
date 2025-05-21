@@ -17,7 +17,9 @@ export const tabArray = [
     id: 'abcn',
     nextId: 'medications',
     previousId: 'demographics',
-    defaultValue: {}
+    defaultValue: {
+      chiefComplaint: ''
+    }
   },
   {
     tabName: 'Medications',
@@ -49,7 +51,7 @@ export const tabArray = [
     id: 'surgeries',
     nextId: 'hospitalizations',
     previousId: 'allergies',
-    defaultValue: {},
+    defaultValue: {}
   },
   {
     tabName: 'Hospitalizations',
@@ -57,7 +59,7 @@ export const tabArray = [
     id: 'hospitalizations',
     nextId: 'reviewSystems',
     previousId: 'surgeries',
-    defaultValue: {},
+    defaultValue: {}
   },
   {
     tabName: 'Review of Systems',
@@ -65,7 +67,7 @@ export const tabArray = [
     id: 'reviewSystems',
     nextId: 'nurseTriage',
     previousId: 'hospitalizations',
-    defaultValue: {},
+    defaultValue: {}
   },
   {
     tabName: 'Nurse Triage',
@@ -73,7 +75,7 @@ export const tabArray = [
     id: 'nurseTriage',
     nextId: 'careAdvice',
     previousId: 'reviewSystems',
-    defaultValue: {},
+    defaultValue: {}
   },
   {
     tabName: 'Care Advice',
@@ -81,13 +83,13 @@ export const tabArray = [
     id: 'careAdvice',
     nextId: 'appointments',
     previousId: 'nurseTriage',
-    defaultValue: {},
+    defaultValue: {}
   },
   {
     tabName: 'Appointments',
     titleName: 'Scheduling',
     id: 'appointments',
     previousId: 'careAdvice',
-    defaultValue: {},
+    defaultValue: {}
   }
 ] as const;

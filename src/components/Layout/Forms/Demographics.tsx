@@ -90,9 +90,9 @@ export const Demographics = () => {
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 mt-4">
         <Button
-          onClick={handleSubmit((value) =>{
-              dispatchUpdateEncounterValue({ demographics: value })
-              dispatchToast('Form saved successfully', 'success')
+          onClick={handleSubmit((value) => {
+            dispatchUpdateEncounterValue({ demographics: value })
+            dispatchToast('Form saved successfully', 'success')
           }
           )}
           title="Save"

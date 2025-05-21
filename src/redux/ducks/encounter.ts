@@ -2,7 +2,9 @@ import type { tabArray } from '@encounter/constant';
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface IEncounterType {
-  form: { [key in (typeof tabArray)[number]['id']]: (typeof tabArray)[number]['defaultValue'] };
+  form: {
+    [key in (typeof tabArray)[number]['id']]: (typeof tabArray)[number]['defaultValue'];
+  };
   activeForm: (typeof tabArray)[number]['id'] | null;
 }
 
@@ -14,7 +16,9 @@ const initialState: IEncounterType = {
       phoneNumber: '',
       dateOfBirth: ''
     },
-    abcn: {},
+    abcn: {
+      cheifComplaint: ''
+    },
     medications: {},
     chronic: {},
     allergies: {},
@@ -25,7 +29,7 @@ const initialState: IEncounterType = {
     careAdvice: {},
     appointments: {}
   },
-  activeForm: null,
+  activeForm: null
 };
 
 export const encounterSlice = createSlice({
@@ -36,7 +40,7 @@ export const encounterSlice = createSlice({
       state: IEncounterType,
       action: PayloadAction<Partial<IEncounterType['form']>>
     ) => {
-      state.form = {...state.form,...action.payload};
+      state.form = { ...state.form, ...action.payload };
     },
     setActiveForm: (
       state: IEncounterType,

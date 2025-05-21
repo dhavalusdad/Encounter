@@ -23,11 +23,7 @@ export const Demographics = () => {
   const nextForm = currentForm?.nextId;
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-xl font-semibold text-Primary-900">
-        Demographics / Intake
-      </h1>
-
+    <>
       {/* Patient Name */}
       <InputField
         type="text"
@@ -37,13 +33,13 @@ export const Demographics = () => {
         name="patientName"
         register={register}
         inputClass="!border-Gray-300 placeholder:!text-Gray-600"
-        parentClassName="w-full sm:w-2/4"
+        parentClassName="min-h-50px py-3 rounded-lg w-full sm:w-auto"
         errorClass=""
         maxLength={15}
       />
 
       {/* Date of Birth */}
-      <div className="w-full sm:w-2/4">
+      <div className="min-h-50px py-3 rounded-lg w-full sm:w-auto">
         <SelectDatePicker
           label="Start Date"
           placeholder="Select date"
@@ -55,6 +51,7 @@ export const Demographics = () => {
               shouldValidate: true
             })
           }
+          isClearable={false}
         />
       </div>
 
@@ -64,7 +61,7 @@ export const Demographics = () => {
           label="Contact Number"
           labelClass="!text-Primary-900 block mb-2.5"
           inputClass="placeholder:!text-Gray-600"
-          parentClassName="w-full sm:w-[calc(50%-12.5px)]"
+          parentClassName="w-full"
           placeholder="Enter Phone Number"
           value={getValues('phoneNumber')}
           onChange={(phoneNumber) =>
@@ -81,7 +78,7 @@ export const Demographics = () => {
         placeholder="Enter address"
         name="address"
         inputClass="!border-Gray-300 placeholder:!text-Gray-600"
-        parentClassName="w-full sm:w-2/4"
+        parentClassName="min-h-50px py-3 rounded-lg w-full sm:w-auto"
         errorClass=""
         maxLength={15}
         register={register}
@@ -90,23 +87,6 @@ export const Demographics = () => {
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 mt-4">
         <Button
-          onClick={handleSubmit((value) => {
-            dispatchUpdateEncounterValue({ demographics: value })
-            dispatchToast('Form saved successfully', 'success')
-          }
-          )}
-          title="Save"
-          variant="filled"
-          className="min-h-50px py-3 px-6 rounded-lg w-full sm:w-auto bg-Primary-500 text-white"
-          isIconFirst
-        />
-        <Button
-          title="Next"
-          variant="filled"
-          className="min-h-50px py-3 px-6 rounded-lg w-full sm:w-auto !bg-Primary-500 text-white"
-          onClick={() => dispatchSetActiveForm(nextForm)}
-        />
-        <Button
           onClick={() => {
             reset(defaultValue, { shouldValidate: true });
             dispatchUpdateEncounterValue({ demographics: defaultValue });
@@ -114,10 +94,27 @@ export const Demographics = () => {
           }}
           title="Clear"
           variant="filled"
-          className="min-h-50px py-3 px-6 rounded-lg w-full sm:w-auto bg-Primary-500 text-white"
+          className="min-h-30px py-3 px-6 rounded-lg w-full sm:w-auto bg-Primary-500 text-white"
+        />
+        <Button
+          onClick={handleSubmit((value) => {
+            dispatchUpdateEncounterValue({ demographics: value })
+            dispatchToast('Form saved successfully', 'success')
+          }
+          )}
+          title="Save"
+          variant="filled"
+          className="min-h-30px py-3 px-6 rounded-lg w-full sm:w-auto bg-Primary-500 text-white"
+          isIconFirst
+        />
+        <Button
+          title="Next"
+          variant="filled"
+          className="min-h-30px py-3 px-6 rounded-lg w-full sm:w-auto !bg-Primary-500 text-white"
+          onClick={() => dispatchSetActiveForm(nextForm)}
         />
       </div>
-    </div>
+    </>
   );
 };
 

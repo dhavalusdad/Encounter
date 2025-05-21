@@ -27,7 +27,7 @@ export const tabArray = [
     id: 'medications',
     nextId: 'chronic',
     previousId: 'abcn',
-    defaultValue: {}
+    defaultValue: { medications: '' }
   },
   {
     tabName: 'Chronic Conditions',
@@ -35,7 +35,7 @@ export const tabArray = [
     id: 'chronic',
     nextId: 'allergies',
     previousId: 'mediations',
-    defaultValue: {}
+    defaultValue: { chronicConditions: '' }
   },
   {
     tabName: 'Allergies',
@@ -43,7 +43,7 @@ export const tabArray = [
     id: 'allergies',
     nextId: 'surgeries',
     previousId: 'chronic',
-    defaultValue: {}
+    defaultValue: { allergies: '' }
   },
   {
     tabName: 'Surgeries',
@@ -51,7 +51,7 @@ export const tabArray = [
     id: 'surgeries',
     nextId: 'hospitalizations',
     previousId: 'allergies',
-    defaultValue: {}
+    defaultValue: { surgeries: '' }
   },
   {
     tabName: 'Hospitalizations',
@@ -59,7 +59,7 @@ export const tabArray = [
     id: 'hospitalizations',
     nextId: 'reviewSystems',
     previousId: 'surgeries',
-    defaultValue: {}
+    defaultValue: { hospitalizations: '' }
   },
   {
     tabName: 'Review of Systems',
@@ -67,7 +67,7 @@ export const tabArray = [
     id: 'reviewSystems',
     nextId: 'nurseTriage',
     previousId: 'hospitalizations',
-    defaultValue: {}
+    defaultValue: { review: '' }
   },
   {
     tabName: 'Nurse Triage',
@@ -83,13 +83,13 @@ export const tabArray = [
     id: 'careAdvice',
     nextId: 'appointments',
     previousId: 'nurseTriage',
-    defaultValue: {}
+    defaultValue: { careAdvice: '' }
   },
   {
     tabName: 'Appointments',
     titleName: 'Scheduling',
     id: 'appointments',
     previousId: 'careAdvice',
-    defaultValue: {}
+    defaultValue: { apointmentDate: '', followUp: '' }
   }
 ] as const;

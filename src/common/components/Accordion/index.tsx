@@ -1,4 +1,4 @@
-import React, { type PropsWithChildren, useState } from 'react';
+import React, { type PropsWithChildren, useEffect, useState } from 'react';
 import { AccordionProvider } from './context';
 
 interface AccordionProps extends PropsWithChildren {
@@ -14,6 +14,10 @@ export const Accordion: React.FC<AccordionProps> = ({
   const [openIndex, setOpenIndex] = useState<number | string | null>(
     defaultOpenIndex
   );
+
+  useEffect(() => {
+    setOpenIndex(defaultOpenIndex);
+  }, [defaultOpenIndex]);
 
   const toggleAccordion = (index: number | string) => {
     setOpenIndex(openIndex === index ? null : index);

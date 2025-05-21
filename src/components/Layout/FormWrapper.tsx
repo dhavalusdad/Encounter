@@ -22,7 +22,8 @@ const FormWrapper = () => {
     <div className="w-full">
       <Accordion
         className="relative px-22px py-26px flex flex-col gap-26px"
-        defaultOpenIndex={activeForm}>
+        defaultOpenIndex={activeForm}
+        >
         {tabArray.map((el) => (
           <AccordionItem
             key={el.id}
@@ -37,7 +38,9 @@ const FormWrapper = () => {
             index={el.id}
             title={el?.titleName}
             hasOpen={activeForm === el.id}
-            onClick={() => dispatchSetActiveForm(el.id)}>
+            onClick={() => {
+              dispatchSetActiveForm(el.id);
+            }}>
             {el.id === 'demographics' && <Demographics />}
             {el.id === 'abcn' && <ABDN />}
             {el.id === 'medications' && <Medications />}

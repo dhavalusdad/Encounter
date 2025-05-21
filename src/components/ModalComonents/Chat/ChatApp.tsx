@@ -216,7 +216,7 @@ const ProperChat = ({
       <div className="bg-white py-6 flex items-center justify-center">
         <Icon name="secureChatLogo" />
       </div>
-      <div className="flex items-center justify-center h-[calc(100dvh-102px)]">
+      <div className="flex items-center justify-center h-[calc(100dvh-102px)] mx-3">
         <div className="relative max-w-90% md:max-w-682px w-full px-3 sm:px-30px py-5 sm:py-9 bg-white rounded-md">
           <div className="flex items-start md:items-center flex-wrap gap-2 md:gap-5 flex-col md:flex-row md:justify-evenly">
             <div className="flex items-center gap-1">

@@ -21,7 +21,39 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",
+    "sourceMap": true,
+    "paths": {
+      "@encounter/*": ["src/*"]
+    },
+    "rootDir": ".",
+    // "sourceMap": true,
+    "declaration": false,
+    // "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    // "target": "es2015",
+    // "module": "esnext",
+    // "lib": ["es2020", "dom"],
+    // "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
+    // "baseUrl": ".",
+    // "paths": {
+    //   "@admin/*": ["apps/admin/src/*"],
+    //   "@cc/*": ["apps/cc/src/*"],
+    //   "@emr-web/common": ["libs/common/src/index.ts"],
+    //   "@emr-web/common/*": ["libs/common/src/*"],
+    //   "@entity-admin/*": ["apps/entity-admin/src/*"],
+    //   "@entity-manager/*": ["apps/entity-manager/src/*"],
+    //   "@mtc/*": ["apps/mtc/src/*"],
+    //   "@mtc-admin/*": ["apps/mtc-admin/src/*"],
+    //   "@rpm/*": ["apps/rpm/src/*"],
+    //   "@secure-chat/*": ["apps/secure-chat/src/*"],
+    //   "@web-phone/*": ["apps/web-phone/src/*"]
+    // }
   },
   "include": ["src"]
 }

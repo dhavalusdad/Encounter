@@ -52,6 +52,22 @@ export
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
           <Button
+            onClick={() => dispatchSetActiveForm(previousForm)}
+            title="Previous"
+            variant="filled"
+            className="min-h-30px py-3 px-6 rounded-lg w-full sm:w-auto !bg-Primary-500 text-white"
+          />
+          <Button
+            onClick={() => {
+              reset(defaultValue, { shouldValidate: true });
+              dispatchUpdateEncounterValue({ abcn: defaultValue });
+              dispatchToast('Form reset successfully', 'success')
+            }}
+            title="Clear"
+            variant="filled"
+            className="min-h-30px py-3 px-6 rounded-lg w-full sm:w-auto bg-Primary-500 text-white"
+          />
+          <Button
             onClick={handleSubmit((value) => {
               dispatchUpdateEncounterValue({ abcn: value })
               dispatchToast('Form saved successfully', 'success')
@@ -67,16 +83,6 @@ export
             title="Next"
             variant="filled"
             className="min-h-30px py-3 px-6 rounded-lg w-full sm:w-auto !bg-Primary-500 text-white"
-          />
-          <Button
-            onClick={() => {
-              reset(defaultValue, { shouldValidate: true });
-              dispatchUpdateEncounterValue({ abcn: defaultValue });
-              dispatchToast('Form reset successfully', 'success')
-            }}
-            title="Clear"
-            variant="filled"
-            className="min-h-30px py-3 px-6 rounded-lg w-full sm:w-auto bg-Primary-500 text-white"
           />
         </div>
       </>

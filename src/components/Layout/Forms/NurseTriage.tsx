@@ -39,7 +39,7 @@ const NurseTriage = () => {
           variant="filled"
           className="min-h-30px py-3 px-6 rounded-lg w-full sm:w-auto !bg-Primary-500 text-white"
         />
-        <Button
+        {/* <Button
           onClick={() => {
             reset(defaultValue, { shouldValidate: true });
             dispatchUpdateEncounterValue({ nurseTriage: defaultValue });
@@ -59,7 +59,7 @@ const NurseTriage = () => {
           variant="filled"
           className="min-h-30px py-3 px-6 rounded-lg w-full sm:w-auto bg-Primary-500 text-white"
           isIconFirst
-        />
+        /> */}
         <Button
           title="Next"
           variant="filled"

@@ -27,7 +27,14 @@ export const tabArray = [
     id: 'medications',
     nextId: 'chronic',
     previousId: 'abcn',
-    defaultValue: { medications: '' }
+    defaultValue: {
+      medications: {
+        medications: {
+          label: '',
+          value: ''
+        }
+      }
+    }
   },
   {
     tabName: 'Chronic Conditions',

@@ -48,10 +48,10 @@ import AdvancedSelect, { type SelectProps } from '.';
  */
 export type ValueType =
   | {
-      value?: string | boolean | number | null | undefined; // The actual value stored
-      label?: string | React.ReactNode; // Display text/element
-      isSelected?: boolean | undefined; // Selection state
-    }
+    value?: string | boolean | number | null | undefined; // The actual value stored
+    label?: string | React.ReactNode; // Display text/element
+    isSelected?: boolean | undefined; // Selection state
+  }
   | ValueType[]
   | null
   | undefined;
@@ -124,12 +124,12 @@ export interface AsyncSelectProps<
     options: OptionData[]
   ) => TQueryFnData[];
   selectedOptionsValue?:
-    | {
-        // Pre-selected options
-        label: string;
-        value: string | number;
-      }[]
-    | null;
+  | {
+    // Pre-selected options
+    label: string;
+    value: string | number;
+  }[]
+  | null;
 }
 
 /**
@@ -225,11 +225,11 @@ export const CustomAsyncSelect = forwardRef(
       refetchOnMount: false,
       select: select
         ? (dataVal): InfiniteData<TQueryFnData> => {
-            return {
-              pages: select(dataVal, options),
-              pageParams: dataVal?.pageParams ?? []
-            };
-          }
+          return {
+            pages: select(dataVal, options),
+            pageParams: dataVal?.pageParams ?? []
+          };
+        }
         : undefined
     });
 

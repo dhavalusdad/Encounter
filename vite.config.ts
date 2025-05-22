@@ -6,5 +6,9 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 // https://vite.dev/config/
 export default defineConfig({
   root: '.',
+  server: {
+    port: 4200,
+    host: 'localhost'
+  },
   plugins: [react(), tsconfigPaths({}),svgr({ include: '**/*.svg?react' })],
 })

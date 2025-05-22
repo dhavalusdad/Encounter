@@ -26,7 +26,7 @@ const DialPad = ({ phoneNumber }: { phoneNumber?: string }) => {
  return <>
     <div
       className={
-        'flex flex-col justify-between w-[280px] mx-auto gap-1.5 h-full overflow-hidden'
+        'flex flex-col item-center justify-around h-screen w-[280px] mx-auto gap-1.5 h-full overflow-hidden'
       }>
       <div className="relative flex flex-col gap-4 w-full">
         <DialInput

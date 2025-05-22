@@ -10,13 +10,12 @@ const Chat = ({
   setIsShowChat: React.Dispatch<React.SetStateAction<boolean>>;
   title: string;
 }) => {
-
   return (
     <Modal
       isOpen={isShowChat}
       onClose={() => setIsShowChat(false)}
       title={title}
-      width="xxs"
+      width="lg"
       parentClassName="!bg-BlackLight-opacity-54"
       titleClassname="!text-Gray-900 truncate">
       <ChatApp />
